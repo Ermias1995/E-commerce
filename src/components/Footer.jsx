@@ -1,4 +1,5 @@
 import { VscSend } from "react-icons/vsc";
+import { RiFacebookLine,RiTwitterLine,RiInstagramLine,RiLinkedinLine } from "react-icons/ri";
 function Footer() {
   return (
     <div className="h-[440px] pl-32 pt-20 bg-black">
@@ -27,7 +28,7 @@ function Footer() {
         </div>
 
         <div className="flex flex-col gap-7">
-          <a href="/Account" className="text-textColor font-medium text-xl">Account</a>
+          <p href="/Account" className="text-textColor font-medium text-xl">Account</p>
           <a href="#" className="text-textColor text-base">My Account</a>
           <a href="/signup" className="text-textColor text-base">Login / Register</a>
           <a href="/cart" className="text-textColor text-base">Cart</a>
@@ -43,7 +44,21 @@ function Footer() {
           <a href="/wishlist" className="text-textColor text-base">Contact</a>
         </div>
 
-        <div className="flex flex-col gap-7"></div>
+        <div className="flex flex-col gap-7">
+          <p href="/Account" className="text-textColor font-medium text-xl">Download App</p>
+          <div className="">
+            <p className="text-textColor font-medium text-xs">Save $3 with App New User Only</p>
+            <div className="flex items-center">
+              <div className=""></div>
+            </div>
+          </div>
+          <div id='Contact Links' className="flex justify-evenly items-center text-textColor text-2xl">
+            <RiFacebookLine />
+            <RiTwitterLine/>
+            <RiInstagramLine/>
+            <RiLinkedinLine/>
+          </div>
+        </div>
       </div>
     </div>
   )

@@ -2,7 +2,7 @@ import { VscSend } from "react-icons/vsc";
 function Footer() {
   return (
     <div className="h-[440px] pl-32 pt-20 bg-black">
-      <div className="grid grid-cols-6 gap-[87px]">
+      <div className="grid grid-cols-5 gap-[87px]">
         <div className="flex flex-col gap-7 w-[217px]">
           <h1 className="text-textColor font-bold text-2xl">Exclusive</h1>
           <h1 className="text-textColor font-medium text-xl">Subscribe</h1>
@@ -35,8 +35,14 @@ function Footer() {
           <a href="/shop" className="text-textColor text-base">Shop</a>
         </div>
 
-        <div className="flex flex-col gap-7"></div>
-        <div className="flex flex-col gap-7"></div>
+        <div className="flex flex-col gap-7">
+          <p href="/Account" className="text-textColor font-medium text-xl">Quick Link</p>
+          <a href="#" className="text-textColor text-base">Privacy Policy</a>
+          <a href="/signup" className="text-textColor text-base">Terms Of Use</a>
+          <a href="/cart" className="text-textColor text-base">FAQ</a>
+          <a href="/wishlist" className="text-textColor text-base">Contact</a>
+        </div>
+
         <div className="flex flex-col gap-7"></div>
       </div>
     </div>

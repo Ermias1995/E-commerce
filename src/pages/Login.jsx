@@ -10,17 +10,15 @@ function Login() {
         </div>
         <div className="flex flex-col justify-start gap-12 w-[370px]">
           <div className="flex flex-col justify-start gap-3">
-            <h1 className="text-4xl">Create an account</h1>
+            <h1 className="text-4xl">Log in to Exclusive</h1>
             <p className="text-base">Enter your detail below</p>
           </div>
           <div className="flex flex-col justify-start gap-10">
-            <input type="text" placeholder="Name" className="border-[#808080] border-b-[1px] focus:outline-none"/>
             <input type="email" placeholder="Enter Email or Phone Number" className="border-[#808080] border-b-[1px] focus:outline-none"/>
             <input type="text" placeholder="Password" className="border-[#808080] border-b-[1px] focus:outline-none"/>
-            <div className="flex flex-col justify-start gap-6">
-              <button className="text-white py-3 bg-[#EA4335] text-base w-full rounded-[4px]" >Create Account</button>
-              <button className="flex gap-1 items-center justify-center py-3 text-base w-full border border-[#808080] rounded-[4px]"><img src={google} alt="Google" className="w-6 h-6"/>Sign up with Google</button>
-              <p className="text-[#808080] pl-16 flex gap-2">Already have account?<a href="/login" className="underline font-medium">Log in</a></p>
+            <div className="flex justify-between items-center">
+              <button className="text-white w-36 py-3 bg-[#EA4335] text-base rounded-[4px]" >Login</button>
+              <a className="pl-16 flex gap-2 text-[#EA4335]">Forget Password?</a>
             </div>
           </div>
         </div>

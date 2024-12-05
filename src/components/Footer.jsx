@@ -1,8 +1,13 @@
 import { VscSend } from "react-icons/vsc";
+import qrcode from "../assets/qrcode.png";
+import googlePlay from "../assets/googlePlay.png";
+import { FaApple,FaRegCopyright } from "react-icons/fa6";
 import { RiFacebookLine,RiTwitterLine,RiInstagramLine,RiLinkedinLine } from "react-icons/ri";
+
 function Footer() {
   return (
-    <div className="h-[440px] pl-32 pt-20 bg-black">
+    <div className="mb-0 bg-black">
+    <div className="mx-32 py-20">
       <div className="grid grid-cols-5 gap-[87px]">
         <div className="flex flex-col gap-7 w-[217px]">
           <h1 className="text-textColor font-bold text-2xl">Exclusive</h1>
@@ -44,22 +49,41 @@ function Footer() {
           <a href="/wishlist" className="text-textColor text-base">Contact</a>
         </div>
 
-        <div className="flex flex-col gap-7">
+        <div className="flex flex-col gap-7 w-48">
           <p href="/Account" className="text-textColor font-medium text-xl">Download App</p>
-          <div className="">
+          <div className="flex flex-col gap-2">
             <p className="text-textColor font-medium text-xs">Save $3 with App New User Only</p>
-            <div className="flex items-center">
-              <div className=""></div>
+            <div className="flex items-center gap-2">
+              <img src={qrcode} alt="qrcode"/>
+              <div className="flex flex-col justify-between gap-2">
+                <div className="flex items-center justify-center border w-24 text-textColor border-textColor rounded-[4px]">
+                  <img src={googlePlay} className="h-6 w-6" alt="Google play icon" />
+                  <div className="flex flex-col justify-start">
+                    <p className="text-[8px]">GET IT ON</p>
+                    <p className="text-[12px]">Google Play</p>
+                  </div>
+                </div>
+                <div className="flex items-center justify-center border w-24 text-textColor border-textColor rounded-[4px]">
+                  <FaApple className="text-2xl"/>
+                  <div className="flex flex-col justify-start">
+                    <p className="text-[8px]">Download on the</p>
+                    <p className="text-[12px]">Apple Store</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div id='Contact Links' className="flex justify-evenly items-center text-textColor text-2xl">
-            <RiFacebookLine />
-            <RiTwitterLine/>
-            <RiInstagramLine/>
-            <RiLinkedinLine/>
+          <div id='Contact Links' className="flex justify-around items-center text-textColor text-2xl">
+            <a href="#"><RiFacebookLine/></a>
+            <a href="#"><RiTwitterLine/></a>
+            <a href=""><RiInstagramLine/></a>
+            <a href="#"><RiLinkedinLine/></a>
           </div>
         </div>
       </div>
+    </div>
+    <hr className="border-gray-500 my-5"/>
+    <p className="text-[#808080] pb-3 text-base flex items-center justify-center gap-2"><FaRegCopyright/> Copyright Rimel 2022. All right reserved</p>
     </div>
   )
 }

@@ -1,12 +1,21 @@
 import { NavLink } from "react-router-dom";
 import { IoSearch,IoHeartOutline,IoCartOutline } from "react-icons/io5";
+import { FiShoppingBag } from "react-icons/fi";
+import { MdOutlineCancel } from "react-icons/md";
+import { CiLogout } from "react-icons/ci";
+import { FaRegStar } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import { RxPerson } from "react-icons/rx";
+import { useState } from "react";
 
 
 function Navbar() {
   const isLoggedIn = useSelector(state=>state.auth.isLoggeIn);
   console.log(isLoggedIn);
+  const [dropdown, setDropdown] = useState(false);
+  const handleClick = () =>{
+    setDropdown(false);
+  }
   return (
     <div>
       <div className="flex items-center justify-evenly h-12 bg-black pl-10">
@@ -37,8 +46,17 @@ function Navbar() {
                 <p className="absolute top-0 right-0 text-white w-4 h-4 bg-[#EA4335] border rounded-full text-xs flex items-center justify-center">2</p>
               </div>
               <div className="flex items-center justify-evenly h-10 w-10 rounded-full hover:bg-[#EA4335] hover:text-white">
-                <NavLink to="/account" className="active:font-bold text-2xl"><RxPerson/></NavLink>
+                <NavLink to="/account" onClick={()=>{setDropdown(!dropdown)}} className="active:font-bold text-2xl"><RxPerson/></NavLink>
               </div>
+              {dropdown && (
+                <div className="absolute top-32 right-20 w-56 text-white bg-black bg-opacity-40 backdrop-blur border rounded-[4px] p-3 pl-10 flex flex-col gap-3">
+                  <NavLink to="/account" className="text-sm flex items-center  gap-2" onClick={()=>{setDropdown(false)}}><RxPerson className="text-lg"/> Manage My Account</NavLink>
+                  <NavLink to="/account" className="text-sm flex items-center  gap-2" onClick={()=>{setDropdown(false)}}><FiShoppingBag className="text-lg"/>My Order</NavLink>
+                  <NavLink to="/account" className="text-sm flex items-center  gap-2" onClick={()=>{setDropdown(false)}}><MdOutlineCancel className="text-lg"/>My Cancellations</NavLink>
+                  <NavLink to="/account" className="text-sm flex items-center  gap-2" onClick={()=>{setDropdown(false)}}><FaRegStar className="text-lg"/>My Reviews</NavLink>
+                  <NavLink to="/signup" className="text-sm flex items-center  gap-2" onClick={()=>{setDropdown(false)}}><CiLogout className="text-lg"/>Logout</NavLink>
+                </div>
+              )}
             </div>
           )}
         </div>

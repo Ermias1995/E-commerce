@@ -1,12 +1,12 @@
 import { NavLink } from "react-router-dom";
-import { IoSearch } from "react-icons/io5";
+import { IoSearch,IoHeartOutline,IoCartOutline } from "react-icons/io5";
 import { useSelector } from "react-redux";
+import { RxPerson } from "react-icons/rx";
 
 
 function Navbar() {
-  
-  const isLoggedIn = useSelector(state=>state.auth.isLoggedIn);
-
+  const isLoggedIn = useSelector(state=>state.auth.isLoggeIn);
+  console.log(isLoggedIn);
   return (
     <div>
       <div className="flex items-center justify-evenly h-12 bg-black pl-10">
@@ -27,11 +27,20 @@ function Navbar() {
         <div className="flex items-center bg-[#F5F5F5] h-[38px] w-[250px] border rounded-[4px] py-[7px] pl-5 pr-3">
           <IoSearch className="absolute transform translate-x-48 text-2xl"/>
           <input type="text" placeholder='What are you looking for?' className="bg-[#F5F5F5] px-2 placeholder:text-xs focus:outline-none"/>
-          {isLoggedIn && <div>
-            <p>Here Logged in is True</p>
-            {/* <NavLink to="/wishlist" className="text-base active:font-bold">Wishlist</NavLink>
-            <NavLink to="/cart" className="text-base active:font-bold">Cart</NavLink> */}
-            </div>}
+          {isLoggedIn && (
+            <div className="flex items-center justify-evenly ml-14 gap-3">
+              <div className=" flex items-center justify-evenly h-10 w-10  rounded-full hover:bg-[#EA4335] hover:text-white">
+                <NavLink to="/wishlist" className="active:font-bold text-2xl"><IoHeartOutline/></NavLink>
+              </div>
+              <div className="relative h-10 w-10 flex items-center justify-evenly">
+                <NavLink to="/cart" className="active:font-bold text-2xl"><IoCartOutline/></NavLink>
+                <p className="absolute top-0 right-0 text-white w-4 h-4 bg-[#EA4335] border rounded-full text-xs flex items-center justify-center">2</p>
+              </div>
+              <div className="flex items-center justify-evenly h-10 w-10 rounded-full hover:bg-[#EA4335] hover:text-white">
+                <NavLink to="/account" className="active:font-bold text-2xl"><RxPerson/></NavLink>
+              </div>
+            </div>
+          )}
         </div>
       </div>
       <hr/>

@@ -1,6 +1,12 @@
-import { NavLink } from "react-router-dom"
-import { IoSearch } from "react-icons/io5"
+import { NavLink } from "react-router-dom";
+import { IoSearch } from "react-icons/io5";
+import { useSelector } from "react-redux";
+
+
 function Navbar() {
+  
+  const isLoggedIn = useSelector(state=>state.auth.isLoggedIn);
+
   return (
     <div>
       <div className="flex items-center justify-evenly h-12 bg-black pl-10">
@@ -21,6 +27,11 @@ function Navbar() {
         <div className="flex items-center bg-[#F5F5F5] h-[38px] w-[250px] border rounded-[4px] py-[7px] pl-5 pr-3">
           <IoSearch className="absolute transform translate-x-48 text-2xl"/>
           <input type="text" placeholder='What are you looking for?' className="bg-[#F5F5F5] px-2 placeholder:text-xs focus:outline-none"/>
+          {isLoggedIn && <div>
+            <p>Here Logged in is True</p>
+            {/* <NavLink to="/wishlist" className="text-base active:font-bold">Wishlist</NavLink>
+            <NavLink to="/cart" className="text-base active:font-bold">Cart</NavLink> */}
+            </div>}
         </div>
       </div>
       <hr/>

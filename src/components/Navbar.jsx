@@ -38,18 +38,18 @@ function Navbar() {
           <input type="text" placeholder='What are you looking for?' className="bg-[#F5F5F5] px-2 placeholder:text-xs focus:outline-none"/>
           {isLoggedIn && (
             <div className="flex items-center justify-evenly ml-14 gap-3">
-              <div className=" flex items-center justify-evenly h-10 w-10  rounded-full hover:bg-[#EA4335] hover:text-white">
+              <div className=" flex items-center justify-evenly h-10 w-10  rounded-full hover:bg-secondary hover:text-white">
                 <NavLink to="/wishlist" className="active:font-bold text-2xl"><IoHeartOutline/></NavLink>
               </div>
               <div className="relative h-10 w-10 flex items-center justify-evenly">
                 <NavLink to="/cart" className="active:font-bold text-2xl"><IoCartOutline/></NavLink>
-                <p className="absolute top-0 right-0 text-white w-4 h-4 bg-[#EA4335] border rounded-full text-xs flex items-center justify-center">2</p>
+                <p className="absolute top-0 right-0 text-white w-4 h-4 bg-secondary border rounded-full text-xs flex items-center justify-center">2</p>
               </div>
-              <div className="flex items-center justify-evenly h-10 w-10 rounded-full hover:bg-[#EA4335] hover:text-white">
+              <div className="flex items-center justify-evenly h-10 w-10 rounded-full hover:bg-secondary hover:text-white">
                 <NavLink onClick={()=>{setDropdown(!dropdown)}} className="active:font-bold text-2xl"><RxPerson/></NavLink>
               </div>
               {dropdown && (
-                <div className="absolute top-32 right-20 w-56 text-white bg-black bg-opacity-40 backdrop-blur border rounded-[4px] p-3 pl-10 flex flex-col gap-3">
+                <div className="absolute top-32 right-20 w-56 text-white bg-black bg-opacity-40 backdrop-blur border rounded-[4px] p-3 pl-10 flex flex-col gap-3 z-10">
                   <NavLink to="/account" className="text-sm flex items-center  gap-2" onClick={()=>{setDropdown(false)}}><RxPerson className="text-lg"/> Manage My Account</NavLink>
                   <NavLink to="/account" className="text-sm flex items-center  gap-2" onClick={()=>{setDropdown(false)}}><FiShoppingBag className="text-lg"/>My Order</NavLink>
                   <NavLink to="/account" className="text-sm flex items-center  gap-2" onClick={()=>{setDropdown(false)}}><MdOutlineCancel className="text-lg"/>My Cancellations</NavLink>

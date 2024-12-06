@@ -8,6 +8,7 @@ export default {
     extend: {
       colors:{
         textColor:'#FAFAFA',
+        secondary:'#EA4335',
       }
     },
   },

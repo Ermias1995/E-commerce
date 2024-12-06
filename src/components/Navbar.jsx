@@ -46,7 +46,7 @@ function Navbar() {
                 <p className="absolute top-0 right-0 text-white w-4 h-4 bg-[#EA4335] border rounded-full text-xs flex items-center justify-center">2</p>
               </div>
               <div className="flex items-center justify-evenly h-10 w-10 rounded-full hover:bg-[#EA4335] hover:text-white">
-                <NavLink to="/account" onClick={()=>{setDropdown(!dropdown)}} className="active:font-bold text-2xl"><RxPerson/></NavLink>
+                <NavLink onClick={()=>{setDropdown(!dropdown)}} className="active:font-bold text-2xl"><RxPerson/></NavLink>
               </div>
               {dropdown && (
                 <div className="absolute top-32 right-20 w-56 text-white bg-black bg-opacity-40 backdrop-blur border rounded-[4px] p-3 pl-10 flex flex-col gap-3">
@@ -54,7 +54,7 @@ function Navbar() {
                   <NavLink to="/account" className="text-sm flex items-center  gap-2" onClick={()=>{setDropdown(false)}}><FiShoppingBag className="text-lg"/>My Order</NavLink>
                   <NavLink to="/account" className="text-sm flex items-center  gap-2" onClick={()=>{setDropdown(false)}}><MdOutlineCancel className="text-lg"/>My Cancellations</NavLink>
                   <NavLink to="/account" className="text-sm flex items-center  gap-2" onClick={()=>{setDropdown(false)}}><FaRegStar className="text-lg"/>My Reviews</NavLink>
-                  <NavLink to="/signup" className="text-sm flex items-center  gap-2" onClick={()=>{setDropdown(false)}}><CiLogout className="text-lg"/>Logout</NavLink>
+                  <NavLink to="/login" className="text-sm flex items-center  gap-2" onClick={()=>{setDropdown(false)}}><CiLogout className="text-lg"/>Logout</NavLink>
                 </div>
               )}
             </div>

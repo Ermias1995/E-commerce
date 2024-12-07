@@ -2,6 +2,8 @@ import { FaAngleRight,FaApple,FaArrowRight } from "react-icons/fa6";
 import { NavLink } from "react-router-dom"
 import iPhone from "../assets/iPhone.png";
 import { useState,useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchProducts } from "../redux/productSlice";
 
 function Home() {
    const [time, setTime] = useState({
@@ -24,6 +26,14 @@ function Home() {
       const interval = setInterval(countdown, 1000);
       return () => clearInterval(interval);
     }, []);
+
+    const dispatch = useDispatch();
+    const {items, loading, error} = useSelector((state)=>state.products);   
+    useEffect(()=>{
+      dispatch(fetchProducts());
+    },[dispatch]);
+    if (loading) return <div className="">Loading...</div>
+    if (error) return <div className="">Error: {error}</div>
   return (
     <div>
       <div id="Sidebar and Banner" className="flex pb-36 gap-10">
@@ -88,7 +98,19 @@ function Home() {
             </div>
           </div>
         </div>
-        <div className=""></div>
+        <div className="flex gap-8">
+            {items.map((product) => (
+                <div key={product.id} className="flex flex-col gap-10 w-[270px] h-[350px] mt-32">
+                  <div id='image section' className="bg-[#808080] border w-48 h-44 rounded relative flex items-center justify-center">
+                    <img src={product.image} alt={product.title}/>
+                  </div>
+                  <div className="flex flex-col gap-2">
+                    <h2 className="text-base">{product.title.length > 20 ? `${product.title.slice(0, 20)}...` : product.title}</h2>
+                    <p className="text-secondary text-base">${product.price}<span className="text-[#808080] line-through ml-1">${product.price + 20}</span></p>
+                  </div>
+                </div>
+            ))}
+        </div>
       </div>
     </div>
   )

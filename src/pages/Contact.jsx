@@ -1,37 +1,19 @@
-import afgirls from "../assets/afgirls.png";
-import tom from "../assets/tom.png";
-import emma from "../assets/emma.png";
-import will from "../assets/will.png";
-import Services from "../components/Services";
-import Personel from "../components/Personel";
-import Status from "../components/Status";
+import { IoCall } from "react-icons/io5";
 
 const Contact = () =>{
     return(
-        <div className="flex flex-col mt-36 gap-36">
-            <div id="First section" className="flex items-center justify-center pl-[135px] gap-10">
-                <div className="flex flex-col gap-16">
-                    <h1 className="text-[54px] font-semibold">Our Story</h1>
-                    <div className="flex flex-col gap-5 w-[525px]">
-                        <p className="text-base">Launced in 2015, Exclusive is South Asia’s premier online shopping makterplace with an 
-                        active presense in Bangladesh. Supported by wide range of tailored marketing, data and 
-                        service solutions, Exclusive has 10,500 sallers and 300 brands and serves 3 millioons 
-                        customers across the region. </p>
-                        <p className="text-base">Exclusive has more than 1 Million products to offer, growing at a very fast. Exclusive 
-                            offers a diverse assotment in categories ranging  from consumer.</p>
-                    </div>
-                </div>
-                <div className="flex items-center justtify-center">
-                    <img src={afgirls} alt="afgirls"/>
-                </div>
+        <div className="flex gap-5">
+            <div className="flex flex-col gap-1 py-8 px-4 rounded shadow-md">
+                <h1 className="text-base flex items-center gap-3"><IoCall className="bg-secondary rounded-full text-white p-2 text-3xl"/>Call To Us</h1>
+                <p className="text-sm">We are available 24/7, 7 days a week.</p>
+                <p className="text-sm">Phone: +8801611112222</p>
+                <hr className="my-4"/>
+                <h1 className="text-base flex items-center gap-3"><IoCall className="bg-secondary rounded-full text-white p-2 text-3xl"/>Write To Us</h1>
+                <p className="text-sm">Fill out our form and we will contact you within 24 hours.</p>
+                <p className="text-sm">Emails: customer@exclusive.com</p>
+                <p className="text-sm">Emails: support@exclusive.com</p>
             </div>
-            <Status/>
-            <div id="3rd section" className="flex justify-evenly items-center px-[135px]">
-                <Personel name="Tom Cruise" title="Founder & Chairman" image={tom}/>
-                <Personel name="Emma Watson" title="Managing Director" image={emma}/>
-                <Personel name="Will Smith" title="Product Designer" image={will}/>
-            </div>
-            <Services/>
+            <div className=""></div>
         </div>
     );
 }

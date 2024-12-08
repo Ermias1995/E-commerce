@@ -47,13 +47,37 @@ const Contact = () =>{
                     <p className="text-base">Annual gross sale in our site</p>
                 </div>
             </div>
-            <div id="3rd section" className="flex justify-between items-center">
+            <div id="3rd section" className="flex justify-evenly items-center">
                 <div className="flex flex-col gap-2">
                     <div className="bg-textColor rounded p-2">
                         <img src={tom} alt="tom"/>
                     </div>
                     <h1 className="text-[32px] font-medium">Tom Cruise</h1>
                     <p className="text-base">Founder & Chairman</p>
+                    <div className="flex gap-2">
+                        <CiTwitter/>
+                        <CiInstagram/>
+                        <CiLinkedin/>
+                    </div>
+                </div>
+                <div className="flex flex-col gap-2">
+                    <div className="bg-textColor rounded p-2">
+                        <img src={emma} alt="Emma watson"/>
+                    </div>
+                    <h1 className="text-[32px] font-medium">Emma Watson</h1>
+                    <p className="text-base">Managing Director</p>
+                    <div className="flex gap-2">
+                        <CiTwitter/>
+                        <CiInstagram/>
+                        <CiLinkedin/>
+                    </div>
+                </div>
+                <div className="flex flex-col gap-2">
+                    <div className="bg-textColor rounded p-2">
+                        <img src={will} alt="Emma watson"/>
+                    </div>
+                    <h1 className="text-[32px] font-medium">Will Smith</h1>
+                    <p className="text-base">Product Designer</p>
                     <div className="flex gap-2">
                         <CiTwitter/>
                         <CiInstagram/>

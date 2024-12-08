@@ -1,5 +1,5 @@
-import { FaAngleRight,FaApple,FaArrowRight } from "react-icons/fa6";
-import { NavLink } from "react-router-dom"
+import { FaAngleRight,FaApple,FaArrowRight,FaTruckFast } from "react-icons/fa6";
+import { NavLink } from "react-router-dom";
 import iPhone from "../assets/iPhone.png";
 import Tape from "../assets/Tape.png";
 import ps5 from "../assets/ps5.png";
@@ -214,33 +214,42 @@ function Home() {
 
         {/* 3rd Banner  */}
         <div className="flex gap-5">
-          <div className="relative flex items-center gap-4 pl-16 py-10 mt-10 bg-black">
+          <div className="relative flex items-center gap-4 pl-16 py-10 mt-10 bg-black rounded">
             <img src={ps5} alt="iPhone" className="object-contain w-full h-full"/>
             <h1 className="absolute bottom-24 text-textColor text-2xl">Play Station 5</h1>
             <p className="absolute bottom-14 w-60 text-sm text-textColor">Black and White version of the PS5 coming out on sale.</p>
             <NavLink to="/contact" className="absolute bottom-8 text-textColor text-base underline flex items-center">Shop Now</NavLink>
           </div>
-          <div className="flex flex-col gap-5">
-            <div className="relative flex items-center gap-4 pl-16 py-10 mt-10 bg-black">
+          <div className="flex flex-col gap-5 rounded">
+            <div className="relative flex items-center gap-4 pl-16 py-10 mt-10 bg-black rounded">
               <img src={woman} alt="iPhone" className="object-contain w-full h-full"/>
               <h1 className="absolute bottom-24 text-textColor text-2xl">Women's Collections</h1>
               <p className="absolute bottom-14 w-60 text-sm text-textColor">Featured woman collections that give you another vibe.</p>
               <NavLink to="/contact" className="absolute bottom-8 text-textColor text-base underline flex items-center">Shop Now</NavLink>
             </div>
-            <div className="flex gap-5">
-              <div className="relative flex items-center gap-4 pl-16 py-10 bg-black">
+            <div className="flex gap-5 rounded">
+              <div className="relative flex items-center gap-4 pl-16 py-10 bg-black rounded">
                 <img src={speaker} alt="iPhone" className="object-contain w-full h-full"/>
                 <h1 className="absolute bottom-24 text-textColor text-2xl">Speakers</h1>
                 <p className="absolute bottom-14 w-60 text-sm text-textColor">Amazon wireless speakers</p>
                 <NavLink to="/contact" className="absolute bottom-8 text-textColor text-base underline flex items-center">Shop Now</NavLink>
               </div>
-              <div className="relative flex items-center gap-4 pl-16 py-10 bg-black">
+              <div className="relative flex items-center gap-4 pl-16 py-10 bg-black rounded">
                 <img src={perfume} alt="iPhone" className="object-contain w-full h-full"/>
                 <h1 className="absolute bottom-24 text-textColor text-2xl">Perfume</h1>
                 <p className="absolute bottom-14 w-60 text-sm text-textColor">GUCCI INTENSE OUD EDP</p>
                 <NavLink to="/contact" className="absolute bottom-8 text-textColor text-base underline flex items-center">Shop Now</NavLink>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Last section */}
+        <div className="flex justify-around items-center">
+          <div className="flex flex-col items-center gap-2">
+            <div className="flex items-center justify-center text-4xl bg-black text-white border-8 rounded-full p-2 w-20 h-20"><FaTruckFast/></div>
+            <h1 className="text-xl">FREE AND FAST DELIVERY</h1>
+            <p className="text-sm">Free delivery for all orders over $140</p>
           </div>
         </div>
       </div>

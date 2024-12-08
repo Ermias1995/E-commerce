@@ -14,13 +14,14 @@ const CategoryList = () => {
     if (error) return <div>Error: {error}</div>;
 
     return (
-        <div>
-            <h1>Categories</h1>
-            <ul>
-                {items.map((category, index) => (
-                    <li key={index}>{category}</li>
-                ))}
-            </ul>
+        <div className='flex items-center justify-evenly'>
+            {items.map((category, index) => (
+                <div key={index}>
+                    <div className="flex flex-col items-center justify-center h-28 w-36 border rounded hover:bg-secondary hover:text-textColor hover:cursor-pointer">
+                        <p className='text-base'>{category}</p>
+                    </div>
+                </div>
+            ))}    
         </div>
     );
 };

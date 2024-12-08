@@ -1,9 +1,21 @@
-const ProductList = ({ items }) => {
+import { useState,useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchProducts } from "../redux/productSlice";
+
+const ProductList = () => {
     const customStyle = {
         overflowX: 'scroll',
         WebkitOverflowScrolling: 'touch', 
         scrollbarWidth: 'none', 
     };
+
+    const dispatch = useDispatch();
+    const {items, loading, error} = useSelector((state)=>state.products);   
+    useEffect(()=>{
+      dispatch(fetchProducts());
+    },[dispatch]);
+    if (loading) return <div className="">Loading...</div>
+    if (error) return <div className="">Error: {error}</div>
 
     return (
         <div className="relative">

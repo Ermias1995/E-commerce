@@ -29,14 +29,6 @@ function Home() {
       return () => clearInterval(interval);
     }, []);
 
-    const dispatch = useDispatch();
-    const {items, loading, error} = useSelector((state)=>state.products);   
-    useEffect(()=>{
-      dispatch(fetchProducts());
-    },[dispatch]);
-    if (loading) return <div className="">Loading...</div>
-    if (error) return <div className="">Error: {error}</div>
-
   return (
     <div>
       <div id="Sidebar and Banner" className="flex pb-36 gap-10">
@@ -101,7 +93,7 @@ function Home() {
             </div>
           </div>
         </div>
-        <ProductList items={items}/>
+        <ProductList/>
         <button className="bg-secondary text-textColor w-56 p-2 flex justify-center items-center ml-[40%] rounded">View All Products</button>
         <hr className="my-10"/>
 
@@ -113,13 +105,14 @@ function Home() {
           </div>
           <div className="flex items-center justify-between">
             <h1 className="text-4xl font-semibold">Browse By Category</h1>
-            <div className="flex">
+            <div className="flex gap-2">
               <button className="bg-gray-300 w-10 h-10 p-2 rounded-full">{"<"}</button>
               <button className="bg-gray-300 w-10 h-10 p-2 rounded-full">{">"}</button>
             </div>
           </div>
           {/* Fetching Catagory */}
           <CategoryList/>
+          <hr className="my-10"/>
         </div>
       </div>
     </div>

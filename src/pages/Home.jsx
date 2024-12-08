@@ -102,7 +102,7 @@ function Home() {
         </div>
         <ProductList items={items}/>
         <button className="bg-secondary text-textColor w-56 p-2 flex justify-center items-center ml-[40%] rounded">View All Products</button>
-        <hr/>
+        <hr className="my-10 w-3/4 ml-32"/>
       </div>
     </div>
   )

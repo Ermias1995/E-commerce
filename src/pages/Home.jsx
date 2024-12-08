@@ -2,6 +2,7 @@ import { FaAngleRight,FaApple,FaArrowRight } from "react-icons/fa6";
 import { NavLink } from "react-router-dom"
 import iPhone from "../assets/iPhone.png";
 import Tape from "../assets/Tape.png";
+import ps5 from "../assets/ps5.png";
 import { useState,useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../redux/productSlice";
@@ -9,6 +10,13 @@ import ProductList from "../components/ProductList";
 import CategoryList from "../components/CategoryList";
 
 function Home() {
+
+  const customStyle = {
+    overflowX: 'scroll',
+    WebkitOverflowScrolling: 'touch', 
+    scrollbarWidth: 'none', 
+  };
+
    const [time, setTime] = useState({
       days: 0,
       hours: 0,
@@ -29,6 +37,16 @@ function Home() {
       const interval = setInterval(countdown, 1000);
       return () => clearInterval(interval);
     }, []);
+
+    // const dispatch = useDispatch();
+    // const { items, limitedItems,loading, error } = useSelector((state) => state.products);
+    
+    // useEffect(() => {
+    //     dispatch(fetchProducts());
+    // }, [dispatch]);
+
+    // if (loading) return <div>Loading...</div>;
+    // if (error) return <div>Error: {error}</div>;
 
   return (
     <div>
@@ -157,6 +175,49 @@ function Home() {
             <img src={Tape} alt="iPhone" className="object-contain w-full h-full"/>
           </div>
         </div>
+        </div>
+        <div className="flex items-center justify-start gap-3">
+          <div className="w-5 h-10 bg-secondary rounded"/>
+          <h1 className="text-secondary text-base font-semibold">Our Products</h1>
+        </div>
+        <div className="flex items-center justify-between">
+          <h1 className="text-4xl font-semibold">Explore Our products</h1>
+          <div className="flex gap-2">
+            <button className="bg-gray-300 w-10 h-10 p-2 rounded-full">{"<"}</button>
+            <button className="bg-gray-300 w-10 h-10 p-2 rounded-full">{">"}</button>
+          </div>
+        </div>
+        {/* Explore Our Products */}
+        <div id="product-list" className="flex gap-8" style={customStyle}>
+              {/* {limitedItems.map((product) => (
+                  <div key={product.id} className="flex flex-col gap-10 w-[270px] h-[350px]">
+                      <div id='image section' className="bg-textColor py-4 border w-48 h-44 rounded relative flex items-center justify-center">
+                          <img src={product.image} alt={product.title} className="object-contain w-full h-full"/>
+                      </div>
+                      <div className="flex flex-col gap-2">
+                          <h2 className="text-base">{product.title.length > 20 ? `${product.title.slice(0, 20)}...` : product.title}</h2>
+                          <p className="text-secondary text-base">${product.price.toFixed(2)}<span className="text-[#808080] line-through ml-1">${(product.price + 20).toFixed(2)}</span></p>
+                      </div>
+                  </div>
+              ))} */}
+        </div>
+        <div className="flex items-center justify-start gap-3">
+          <div className="w-5 h-10 bg-secondary rounded"/>
+          <h1 className="text-secondary text-base font-semibold">Featured</h1>
+        </div>
+        <div className="flex items-center justify-between">
+          <h1 className="text-4xl font-semibold">New Arrival</h1>
+        </div>
+
+        {/* 3rd Banner  */}
+        <div className="flex gap-4">
+          <div className="relative flex items-center gap-4 pl-16 py-10 mt-10 bg-black">
+            <img src={ps5} alt="iPhone" className="object-contain w-full h-full"/>
+            <h1 className="absolute bottom-24 text-textColor text-2xl">Play Station 5</h1>
+            <p className="absolute bottom-16 text-sm text-textColor">Black and White version of the PS5 coming out on sale.</p>
+            <NavLink to="/contact" className="absolute bottom-8 text-textColor text-base underline flex items-center">Shop Now</NavLink>
+          </div>
+          <div className=""></div>
         </div>
       </div>
     </div>

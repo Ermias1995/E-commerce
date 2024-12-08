@@ -17,6 +17,7 @@ export const fetchProductsByCategory = createAsyncThunk(
 
 const initialState = {
     items:[],
+    limitedItems:[],
     loading:false,
     error:null,
 }
@@ -25,7 +26,11 @@ const productSlice = createSlice({
     name:'products',
     initialState,
 
-    reducers:{},
+    reducers:{
+        setLimitedItems: (state, action) => {
+            state.limitedItems = action.payload; // Action to set limited items
+        },
+    },
     extraReducers: (builder) => {
         builder
             .addCase(fetchProducts.pending, (state) => {
@@ -34,6 +39,7 @@ const productSlice = createSlice({
             .addCase(fetchProducts.fulfilled, (state, action) => {
                 state.loading = false;
                 state.items = action.payload;
+                state.limitedItems = action.payload.slice(0, 8);
             })
             .addCase(fetchProducts.rejected, (state, action) => {
                 state.loading = false;
@@ -42,10 +48,10 @@ const productSlice = createSlice({
             .addCase(fetchProductsByCategory.pending, (state) => {
                 state.loading = true;
             })
-            .addCase(fetchProductsByCategory.fulfilled, (state, action) => {
-                state.loading = false;
-                state.items[action.payload.category] = action.payload.products;
-            })
+            // .addCase(fetchProductsByCategory.fulfilled, (state, action) => {
+            //     state.loading = false;
+            //     state.items[action.payload.category] = action.payload.products;
+            // })
             .addCase(fetchProductsByCategory.rejected, (state, action) => {
                 state.loading = false;
                 state.error = action.error.message;

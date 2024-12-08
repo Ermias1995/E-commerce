@@ -4,6 +4,7 @@ import iPhone from "../assets/iPhone.png";
 import { useState,useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../redux/productSlice";
+import ProductList from "../components/ProductList";
 
 function Home() {
    const [time, setTime] = useState({
@@ -34,6 +35,7 @@ function Home() {
     },[dispatch]);
     if (loading) return <div className="">Loading...</div>
     if (error) return <div className="">Error: {error}</div>
+
   return (
     <div>
       <div id="Sidebar and Banner" className="flex pb-36 gap-10">
@@ -67,7 +69,7 @@ function Home() {
           </div>
         </div>
       </div>
-      <div id="Flash Sales and Items" className="flex flex-col gap-10 pl-[135px]">
+      <div id="Flash Sales and Items" className="flex flex-col gap-8 pl-[135px]">
         <div className="flex flex-col gap-6">
           <div className="flex items-center justify-start gap-4">
             <div className="w-5 h-10 bg-secondary rounded"/>
@@ -98,23 +100,9 @@ function Home() {
             </div>
           </div>
         </div>
-        <div className="relative">
-          <button onClick={() => document.getElementById('product-list').scrollBy({ left: -300, behavior: 'smooth' })} className="absolute left-0 top-1/3 w-12 h-12 z-10 transform -translate-y-1/2 bg-gray-300 p-2 rounded-full">{"<"}</button>
-          <div id="product-list" className="flex gap-8 overflow-x-scroll scrollbar-hide">
-            {items.map((product) => (
-                <div key={product.id} className="flex flex-col gap-10 w-[270px] h-[350px]">
-                  <div id='image section' className="bg-textColor py-4 border w-48 h-44 rounded relative flex items-center justify-center">
-                    <img src={product.image} alt={product.title} className="object-contain w-full h-full"/>
-                  </div>
-                  <div className="flex flex-col gap-2">
-                    <h2 className="text-base">{product.title.length > 20 ? `${product.title.slice(0, 20)}...` : product.title}</h2>
-                    <p className="text-secondary text-base">${product.price.toFixed(2)}<span className="text-[#808080] line-through ml-1">${(product.price + 20).toFixed(2)}</span></p>
-                  </div>
-                </div>
-            ))}
-          </div>
-          <button onClick={() => document.getElementById('product-list').scrollBy({ left: 300, behavior: 'smooth' })} className="absolute right-0 top-1/3 w-12 h-12 transform -translate-y-1/2 bg-gray-300 p-2 rounded-full">{">"}</button>
-        </div>
+        <ProductList items={items}/>
+        <button className="bg-secondary text-textColor w-56 p-2 flex justify-center items-center ml-[40%] rounded">View All Products</button>
+        <hr/>
       </div>
     </div>
   )

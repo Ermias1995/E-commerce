@@ -7,6 +7,7 @@ import Checkout from "./pages/Checkout";
 import Wishlist from "./pages/Wishlist";
 import Login from "./pages/Login";
 import Account from "./pages/Account";
+import Contact from "./pages/Contact";
 import Signup from "./pages/Signup";
 import Error from "./pages/Error";
 import { useSelector } from "react-redux";
@@ -24,6 +25,7 @@ function App() {
         <Route path="checkout" element={isLoggedIn ? <Checkout/> : <Navigate to="/login"/>}/>
         <Route path="wishlist" element={isLoggedIn ? <Wishlist/> : <Navigate to="/login"/>}/>
         <Route path="account" element={isLoggedIn ? <Account/> : <Navigate to="/login"/>}/>
+        <Route path="contact" element={isLoggedIn ? <Contact/> : <Navigate to="/login"/>}/>
         <Route path="login" element={<Login/>}/>
         <Route path="signup" element={<Signup/>}/>
         <Route path="*" element={<Error/>}/>

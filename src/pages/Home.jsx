@@ -5,6 +5,7 @@ import { useState,useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../redux/productSlice";
 import ProductList from "../components/ProductList";
+import CategoryList from "../components/CategoryList";
 
 function Home() {
    const [time, setTime] = useState({
@@ -69,7 +70,7 @@ function Home() {
           </div>
         </div>
       </div>
-      <div id="Flash Sales and Items" className="flex flex-col gap-8 pl-[135px]">
+      <div id="Flash Sales and Items" className="flex flex-col gap-8 px-[135px]">
         <div className="flex flex-col gap-6">
           <div className="flex items-center justify-start gap-4">
             <div className="w-5 h-10 bg-secondary rounded"/>
@@ -102,7 +103,24 @@ function Home() {
         </div>
         <ProductList items={items}/>
         <button className="bg-secondary text-textColor w-56 p-2 flex justify-center items-center ml-[40%] rounded">View All Products</button>
-        <hr className="my-10 w-3/4 ml-32"/>
+        <hr className="my-10"/>
+
+        {/* Browse by Category Section */}
+        <div className="flex flex-col gap-14">
+          <div className="flex items-center justify-start gap-3">
+            <div className="w-5 h-10 bg-secondary rounded"/>
+            <h1 className="text-secondary text-base font-semibold">Categories</h1>
+          </div>
+          <div className="flex items-center justify-between">
+            <h1 className="text-4xl font-semibold">Browse By Category</h1>
+            <div className="flex">
+              <button className="bg-gray-300 w-10 h-10 p-2 rounded-full">{"<"}</button>
+              <button className="bg-gray-300 w-10 h-10 p-2 rounded-full">{">"}</button>
+            </div>
+          </div>
+          {/* Fetching Catagory */}
+          <CategoryList/>
+        </div>
       </div>
     </div>
   )

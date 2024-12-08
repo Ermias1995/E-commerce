@@ -1,6 +1,7 @@
 import { FaAngleRight,FaApple,FaArrowRight } from "react-icons/fa6";
 import { NavLink } from "react-router-dom"
 import iPhone from "../assets/iPhone.png";
+import Tape from "../assets/Tape.png";
 import { useState,useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../redux/productSlice";
@@ -98,7 +99,7 @@ function Home() {
         <hr className="my-10"/>
 
         {/* Browse by Category Section */}
-        <div className="flex flex-col gap-14">
+        <div className="flex flex-col gap-10">
           <div className="flex items-center justify-start gap-3">
             <div className="w-5 h-10 bg-secondary rounded"/>
             <h1 className="text-secondary text-base font-semibold">Categories</h1>
@@ -110,9 +111,52 @@ function Home() {
               <button className="bg-gray-300 w-10 h-10 p-2 rounded-full">{">"}</button>
             </div>
           </div>
-          {/* Fetching Catagory */}
           <CategoryList/>
           <hr className="my-10"/>
+        </div>
+
+        {/* Best Selling Products */}
+        <div className="flex flex-col gap-10">
+          <div className="flex items-center justify-start gap-3">
+            <div className="w-5 h-10 bg-secondary rounded"/>
+            <h1 className="text-secondary text-base font-semibold">This Month</h1>
+          </div>
+          <div className="flex items-center justify-between">
+            <h1 className="text-4xl font-semibold">Best Selling Products</h1>
+            <button className="text-textColor bg-secondary p-2 px-4 rounded">View All</button>
+          </div>
+          {/* <CategoryList/> */}
+          <ProductList category="jewelery"/>
+
+          {/* Second banner */}
+          <div className="relative flex justify-center items-center gap-4 pl-16 py-12 mt-10 bg-black">
+            <div className="flex flex-col justify-center gap-5">
+              <h1 className="text-[#00FF66] text-base flex items-center">categories</h1>
+              <h1 className="text-textColor text-5xl">Enhance Your Music Experience</h1>
+              <div className="flex gap-6">
+                <div className="flex flex-col items-center w-16 h-16 bg-white text-black rounded-full p-2">
+                  <p className="text-base font-semibold">24</p>
+                  <p className="text-xs font-medium">Hours</p>
+                </div>
+                <div className="flex flex-col items-center w-16 h-16 bg-white text-black rounded-full p-2">
+                  <p className="text-base font-semibold">05</p>
+                  <p className="text-xs font-medium">Days</p>
+                </div>
+                <div className="flex flex-col items-center w-16 h-16 bg-white text-black rounded-full p-2">
+                  <p className="text-base font-bold">59</p>
+                  <p className="text-xs font-medium">Minutes</p>
+                </div>
+                <div className="flex flex-col items-center w-16 h-16 bg-white text-black rounded-full p-2">
+                  <p className="text-base font-bold">35</p>
+                  <p className="text-xs font-medium">Seconds</p>
+                </div>
+              </div>
+              <NavLink to="/contact" className="text-textColor w-40 bg-[#00FF66] py-2 px-4 text-base flex items-center justify-center rounded">Buy Now!</NavLink>
+            </div>
+          <div>
+            <img src={Tape} alt="iPhone" className="object-contain w-full h-full"/>
+          </div>
+        </div>
         </div>
       </div>
     </div>

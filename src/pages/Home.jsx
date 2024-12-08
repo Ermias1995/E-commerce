@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom"
 import iPhone from "../assets/iPhone.png";
 import Tape from "../assets/Tape.png";
 import ps5 from "../assets/ps5.png";
+import woman from "../assets/woman.png";
 import { useState,useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../redux/productSlice";
@@ -210,14 +211,22 @@ function Home() {
         </div>
 
         {/* 3rd Banner  */}
-        <div className="flex gap-4">
+        <div className="flex gap-5">
           <div className="relative flex items-center gap-4 pl-16 py-10 mt-10 bg-black">
             <img src={ps5} alt="iPhone" className="object-contain w-full h-full"/>
             <h1 className="absolute bottom-24 text-textColor text-2xl">Play Station 5</h1>
-            <p className="absolute bottom-16 text-sm text-textColor">Black and White version of the PS5 coming out on sale.</p>
+            <p className="absolute bottom-14 w-60 text-sm text-textColor">Black and White version of the PS5 coming out on sale.</p>
             <NavLink to="/contact" className="absolute bottom-8 text-textColor text-base underline flex items-center">Shop Now</NavLink>
           </div>
-          <div className=""></div>
+          <div className="flex flex-col gap-5">
+            <div className="relative flex items-center gap-4 pl-16 py-10 mt-10 bg-black">
+              <img src={woman} alt="iPhone" className="object-contain w-full h-full"/>
+              <h1 className="absolute bottom-24 text-textColor text-2xl">Women's Collections</h1>
+              <p className="absolute bottom-14 w-60 text-sm text-textColor">Featured woman collections that give you another vibe.</p>
+              <NavLink to="/contact" className="absolute bottom-8 text-textColor text-base underline flex items-center">Shop Now</NavLink>
+            </div>
+            <div className=""></div>
+          </div>
         </div>
       </div>
     </div>

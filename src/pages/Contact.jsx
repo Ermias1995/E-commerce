@@ -1,7 +1,11 @@
 import afgirls from "../assets/afgirls.png";
 import { FaHome,FaShoppingBag } from "react-icons/fa";
 import { FaDollarSign } from "react-icons/fa6";
+import { CiTwitter,CiInstagram,CiLinkedin } from "react-icons/ci";
 import { GiGymBag } from "react-icons/gi";
+import tom from "../assets/tom.png";
+import emma from "../assets/emma.png";
+import will from "../assets/will.png";
 const Contact = () =>{
     return(
         <div className="flex flex-col mt-36 gap-36">
@@ -28,19 +32,33 @@ const Contact = () =>{
                     <p className="text-base">Sallers active our site</p>
                 </div>
                 <div className="flex flex-col items-center gap-2 border rounded bg-textColor hover:text-textColor hover:bg-secondary py-5 px-10">
-                    <div className="flex items-center justify-center text-4xl bg-black text-white border-8 rounded-full p-2 w-20 h-20"><FaHome/></div>
+                    <div className="flex items-center justify-center text-4xl bg-black text-white border-8 rounded-full p-2 w-20 h-20"><FaDollarSign/></div>
                     <h1 className="text-3xl font-bold">33k</h1>
                     <p className="text-base">Monthly Product Sale</p>
                 </div>
                 <div className="flex flex-col items-center gap-2 border rounded bg-textColor hover:text-textColor hover:bg-secondary py-5 px-10">
-                    <div className="flex items-center justify-center text-4xl bg-black text-white border-8 rounded-full p-2 w-20 h-20"><FaHome/></div>
+                    <div className="flex items-center justify-center text-4xl bg-black text-white border-8 rounded-full p-2 w-20 h-20"><FaShoppingBag/></div>
                     <h1 className="text-3xl font-bold">45.5k</h1>
                     <p className="text-base">Customer active in our site</p>
                 </div>
                 <div className="flex flex-col items-center gap-2 border rounded bg-textColor hover:text-textColor hover:bg-secondary py-5 px-10">
-                    <div className="flex items-center justify-center text-4xl bg-black text-white border-8 rounded-full p-2 w-20 h-20"><FaHome/></div>
+                    <div className="flex items-center justify-center text-4xl bg-black text-white border-8 rounded-full p-2 w-20 h-20"><GiGymBag/></div>
                     <h1 className="text-3xl font-bold">25k</h1>
                     <p className="text-base">Annual gross sale in our site</p>
+                </div>
+            </div>
+            <div id="3rd section" className="flex justify-between items-center">
+                <div className="flex flex-col gap-2">
+                    <div className="bg-textColor rounded p-2">
+                        <img src={tom} alt="tom"/>
+                    </div>
+                    <h1 className="text-[32px] font-medium">Tom Cruise</h1>
+                    <p className="text-base">Founder & Chairman</p>
+                    <div className="flex gap-2">
+                        <CiTwitter/>
+                        <CiInstagram/>
+                        <CiLinkedin/>
+                    </div>
                 </div>
             </div>
         </div>

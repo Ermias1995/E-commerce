@@ -53,7 +53,8 @@ function Home() {
 
     // if (loading) return <div>Loading...</div>;
     // if (error) return <div>Error: {error}</div>;
-
+    
+    const selectedCategory = useSelector((state) => state.category.selectedCategory);
     const categories = ["electronics", "jewelery", "men's clothing", "women's clothing"];
 
   return (
@@ -138,14 +139,14 @@ function Home() {
             </div>
           </div>
           <CategoryList categories={categories} />
-          <hr className="my-10"/>
+          <hr className="my-6"/>
         </div>
 
         {/* Best Selling Products */}
         <div className="flex flex-col gap-10">
           <div className="flex items-center justify-start gap-3">
-            <div className="w-5 h-10 bg-secondary rounded"/>
-            <h1 className="text-secondary text-base font-semibold">This Month</h1>
+            <div className="w-5 h-10 bg-[#00FF66] rounded"/>
+            <h1 className="text-[#00FF66] text-base font-semibold">{selectedCategory.charAt(0).toUpperCase() + selectedCategory.slice(1)}</h1>
           </div>
           <div className="flex items-center justify-between">
             <h1 className="text-4xl font-semibold">Best Selling Products</h1>

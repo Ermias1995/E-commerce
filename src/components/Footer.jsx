@@ -3,6 +3,7 @@ import qrcode from "../assets/qrcode.png";
 import googlePlay from "../assets/googlePlay.png";
 import { FaApple,FaRegCopyright } from "react-icons/fa6";
 import { RiFacebookLine,RiTwitterLine,RiInstagramLine,RiLinkedinLine } from "react-icons/ri";
+import { NavLink } from "react-router-dom";
 
 function Footer() {
   return (
@@ -34,19 +35,19 @@ function Footer() {
 
         <div className="flex flex-col gap-7">
           <p href="/Account" className="text-textColor font-medium text-xl">Account</p>
-          <a href="#" className="text-textColor text-base">My Account</a>
-          <a href="/signup" className="text-textColor text-base">Login / Register</a>
-          <a href="/cart" className="text-textColor text-base">Cart</a>
-          <a href="/wishlist" className="text-textColor text-base">Wishlist</a>
-          <a href="/shop" className="text-textColor text-base">Shop</a>
+          <NavLink to='/not' className="text-textColor text-base">My Account</NavLink>
+          <NavLink to='/not' className="text-textColor text-base">Login / Register</NavLink>
+          <NavLink to='/not' className="text-textColor text-base">Cart</NavLink>
+          <NavLink to='/not' className="text-textColor text-base">Wishlist</NavLink>
+          <NavLink to='/not' className="text-textColor text-base">Shop</NavLink>
         </div>
 
         <div className="flex flex-col gap-7">
           <p href="/Account" className="text-textColor font-medium text-xl">Quick Link</p>
-          <a href="#" className="text-textColor text-base">Privacy Policy</a>
-          <a href="/signup" className="text-textColor text-base">Terms Of Use</a>
-          <a href="/cart" className="text-textColor text-base">FAQ</a>
-          <a href="/wishlist" className="text-textColor text-base">Contact</a>
+          <NavLink to='/not' className="text-textColor text-base">Privacy Policy</NavLink>
+          <NavLink to='/not' className="text-textColor text-base">Terms Of Use</NavLink>
+          <NavLink to='/not' className="text-textColor text-base">FAQ</NavLink>
+          <NavLink to='/not' className="text-textColor text-base">Contact</NavLink>
         </div>
 
         <div className="flex flex-col gap-7 w-48">

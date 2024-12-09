@@ -44,16 +44,6 @@ function Home() {
       const interval = setInterval(countdown, 1000);
       return () => clearInterval(interval);
     }, []);
-
-    // const dispatch = useDispatch();
-    // const { loading, error } = useSelector((state) => state.products);
-
-    // useEffect(() => {
-    //     dispatch(fetchProducts());
-    // }, [dispatch]);
-
-    // if (loading) return <div>Loading...</div>;
-    // if (error) return <div>Error: {error}</div>;
     
     const selectedCategory = useSelector((state) => state.category.selectedCategory);
     const categories = ["electronics", "jewelery", "men's clothing", "women's clothing"];
@@ -62,21 +52,21 @@ function Home() {
     <div>
       <div id="Sidebar and Banner" className="flex pb-36 gap-10">
         <div id="sidebar" className="flex flex-col gap-3 w-96 border-r-[1px] pl-32 pr-3 pt-10">
-          <NavLink to="/contact" className="text-base active:font-bold flex justify-between hover:font-bold">Woman's Fashion<FaAngleRight/></NavLink>
-          <NavLink to="/contact" className="text-base active:font-bold flex justify-between hover:font-bold">Men's Fashion<FaAngleRight/></NavLink>
-          <NavLink to="/contact" className="text-base active:font-bold flex justify-between hover:font-bold">Electronics</NavLink>
-          <NavLink to="/contact" className="text-base active:font-bold flex justify-between hover:font-bold">Home & Lifestyle</NavLink>
-          <NavLink to="/contact" className="text-base active:font-bold flex justify-between hover:font-bold">Medicine</NavLink>
-          <NavLink to="/contact" className="text-base active:font-bold flex justify-between hover:font-bold">Sports & Outdoor</NavLink>
-          <NavLink to="/contact" className="text-base active:font-bold flex justify-between hover:font-bold">Baby's & Toys</NavLink>
-          <NavLink to="/contact" className="text-base active:font-bold flex justify-between hover:font-bold">Groceries & Pets</NavLink>
-          <NavLink to="/contact" className="text-base active:font-bold flex justify-between hover:font-bold">Health & Beauty</NavLink>
+          <NavLink to="/not" className="text-base active:font-bold flex justify-between hover:font-bold">Woman's Fashion<FaAngleRight/></NavLink>
+          <NavLink to="/not" className="text-base active:font-bold flex justify-between hover:font-bold">Men's Fashion<FaAngleRight/></NavLink>
+          <NavLink to="/not" className="text-base active:font-bold flex justify-between hover:font-bold">Electronics</NavLink>
+          <NavLink to="/not" className="text-base active:font-bold flex justify-between hover:font-bold">Home & Lifestyle</NavLink>
+          <NavLink to="/not" className="text-base active:font-bold flex justify-between hover:font-bold">Medicine</NavLink>
+          <NavLink to="/not" className="text-base active:font-bold flex justify-between hover:font-bold">Sports & Outdoor</NavLink>
+          <NavLink to="/not" className="text-base active:font-bold flex justify-between hover:font-bold">Baby's & Toys</NavLink>
+          <NavLink to="/not" className="text-base active:font-bold flex justify-between hover:font-bold">Groceries & Pets</NavLink>
+          <NavLink to="/not" className="text-base active:font-bold flex justify-between hover:font-bold">Health & Beauty</NavLink>
         </div>
         <div className="relative flex justify-center items-center gap-4 pl-16 py-10 mt-10 bg-black">
           <div className="flex flex-col ustify-center gap-4">
             <h1 className="text-textColor text-base flex items-center gap-4"><FaApple className="text-5xl"/>iPhone 14 Series</h1>
             <h1 className="text-textColor text-5xl w-72">Up to 10% off Voucher</h1>
-            <NavLink to="/contact" className="text-textColor text-base underline flex items-center gap-2">Shop Now<FaArrowRight/></NavLink>
+            <NavLink to="/" className="text-textColor text-base underline flex items-center gap-2">Shop Now<FaArrowRight/></NavLink>
           </div>
             <div className="absolute items-end justify-center flex gap-3 mt-80">
               <button className="w-3 h-3 bg-gray-400 hover:bg-secondary hover:border hover:border-white rounded-full"></button>
@@ -182,7 +172,7 @@ function Home() {
                   <p className="text-xs font-medium">Seconds</p>
                 </div>
               </div>
-              <NavLink to="/contact" className="text-textColor w-40 bg-[#00FF66] py-2 px-4 text-base flex items-center justify-center rounded">Buy Now!</NavLink>
+              <NavLink to="/not" className="text-textColor w-40 bg-[#00FF66] py-2 px-4 text-base flex items-center justify-center rounded">Buy Now!</NavLink>
             </div>
           <div>
             <img src={Tape} alt="iPhone" className="object-contain w-full h-full"/>
@@ -218,27 +208,27 @@ function Home() {
             <img src={ps5} alt="iPhone" className="object-contain w-full h-full"/>
             <h1 className="absolute bottom-24 text-textColor text-2xl">Play Station 5</h1>
             <p className="absolute bottom-14 w-60 text-sm text-textColor">Black and White version of the PS5 coming out on sale.</p>
-            <NavLink to="/contact" className="absolute bottom-8 text-textColor text-base underline flex items-center">Shop Now</NavLink>
+            <NavLink to="/not" className="absolute bottom-8 text-textColor text-base underline flex items-center">Shop Now</NavLink>
           </div>
           <div className="flex flex-col gap-5 rounded">
             <div className="relative flex items-center gap-4 pl-16 py-10 mt-10 bg-black rounded">
               <img src={woman} alt="iPhone" className="object-contain w-full h-full"/>
               <h1 className="absolute bottom-24 text-textColor text-2xl">Women's Collections</h1>
               <p className="absolute bottom-14 w-60 text-sm text-textColor">Featured woman collections that give you another vibe.</p>
-              <NavLink to="/contact" className="absolute bottom-8 text-textColor text-base underline flex items-center">Shop Now</NavLink>
+              <NavLink to="/not" className="absolute bottom-8 text-textColor text-base underline flex items-center">Shop Now</NavLink>
             </div>
             <div className="flex gap-5 rounded">
               <div className="relative flex items-center gap-4 pl-16 py-10 bg-black rounded">
                 <img src={speaker} alt="iPhone" className="object-contain w-full h-full"/>
                 <h1 className="absolute bottom-24 text-textColor text-2xl">Speakers</h1>
                 <p className="absolute bottom-14 w-60 text-sm text-textColor">Amazon wireless speakers</p>
-                <NavLink to="/contact" className="absolute bottom-8 text-textColor text-base underline flex items-center">Shop Now</NavLink>
+                <NavLink to="/not" className="absolute bottom-8 text-textColor text-base underline flex items-center">Shop Now</NavLink>
               </div>
               <div className="relative flex items-center gap-4 pl-16 py-10 bg-black rounded">
                 <img src={perfume} alt="iPhone" className="object-contain w-full h-full"/>
                 <h1 className="absolute bottom-24 text-textColor text-2xl">Perfume</h1>
                 <p className="absolute bottom-14 w-60 text-sm text-textColor">GUCCI INTENSE OUD EDP</p>
-                <NavLink to="/contact" className="absolute bottom-8 text-textColor text-base underline flex items-center">Shop Now</NavLink>
+                <NavLink to="/not" className="absolute bottom-8 text-textColor text-base underline flex items-center">Shop Now</NavLink>
               </div>
             </div>
           </div>

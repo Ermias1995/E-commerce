@@ -23,8 +23,8 @@ function App() {
     <BrowserRouter>
       <Routes>
       <Route path="/" element={ <SharedLayout/>}>
-        {/* <Route index element={isLoggedIn ? <Home /> : <Navigate to="/login" />}/> */}
-        <Route index element={<Home/>}/>
+        <Route index element={isLoggedIn ? <Home /> : <Navigate to="/login" />}/>
+        {/* <Route index element={<Home/>}/> */}
         <Route path="cart" element={isLoggedIn ? <Cart/> : <Navigate to="/login"/>}/>
         <Route path="checkout" element={isLoggedIn ? <Checkout/> : <Navigate to="/login"/>}/>
         <Route path="wishlist" element={isLoggedIn ? <Wishlist/> : <Navigate to="/login"/>}/>

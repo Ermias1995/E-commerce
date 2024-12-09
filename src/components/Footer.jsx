@@ -17,11 +17,7 @@ function Footer() {
             <h1 className="text-textColor text-base">Get 10% off your first order</h1>
             <div className="relative flex items-center bg-black h-12 border rounded-[4px] py-3 pl-4">
                 <VscSend className="absolute left-40 text-2xl text-white hover:cursor-pointer" />
-                <input 
-                  type="text" 
-                  placeholder="Enter your email" 
-                  className="bg-transparent text-textColor px-2 placeholder:text-base focus:outline-none w-full" 
-                />
+                <input type="text" placeholder="Enter your email" className="bg-transparent text-textColor px-2 placeholder:text-base focus:outline-none w-full"/>
             </div>
           </div>
         </div>

@@ -69,3 +69,9 @@ To get a local copy up and running, follow these steps:
 1. Clone the repo:
    ```bash
    git clone https://github.com/yourusername/exclusive-ecommerce.git
+2. ```bash
+   cd exclusive-ecommerce
+3. ```bash
+   npm install
+4. ```bash
+   npm run dev

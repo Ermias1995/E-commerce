@@ -7,6 +7,15 @@
   <img src="https://img.shields.io/badge/Figma%20Design-View%20Design-blue" alt="Figma Design" style="height: 40px;">
 </a>
 
+## Login Credentials
+
+Here are the login credentials for the application:
+
+<p style="font-size: 24px;">
+  Username: <strong>mor_2314</strong><br>
+  Password: <strong>83r5^_</strong>
+</p>
+
 ## Overview
 
 The Exclusive E-commerce app is an e-commerce platform designed to provide a seamless shopping experience for users. Built with modern web technologies, this application features a user-friendly interface that allows customers to browse, search, and purchase a wide variety of products, including categories such as Men, Women, Kids, and Accessories.

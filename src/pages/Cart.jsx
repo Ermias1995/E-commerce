@@ -99,9 +99,9 @@ const Cart = () => {
             <div className="flex justify-between">
               <p>Total:</p>
               <p>${totalPrice.toFixed(2)}</p>
-            </div>
-            <NavLink to='checkout' onClick={handleClearCart} className="bg-red-500 w-60 text-white py-2 px-4 rounded">
-              Procced to Checkout
+            </div>            
+            <NavLink to='/checkout' state={{ cartItems: productDetails, totalPrice }} onClick={handleClearCart} className="bg-red-500 w-60 text-white py-2 px-4 rounded">
+              Proceed to Checkout
             </NavLink>
           </div>
         </div>

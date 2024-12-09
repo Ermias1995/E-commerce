@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../redux/cartSlice';
 import { addToWishlist } from '../redux/wishlistSlice';
+import { FaRegHeart, FaPlus, FaMinus } from 'react-icons/fa6'; 
 
 const ProductDetail = () => {
     const { id } = useParams();
@@ -10,6 +11,7 @@ const ProductDetail = () => {
     const [product, setProduct] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [quantity, setQuantity] = useState(1); 
 
     useEffect(() => {
         const fetchProduct = async () => {
@@ -31,7 +33,7 @@ const ProductDetail = () => {
     const handleAddToCart = () => {
         const cartItem = {
             productId: product.id,
-            quantity: 1,
+            quantity: quantity,
         };
         dispatch(addToCart(cartItem));
     };
@@ -44,19 +46,34 @@ const ProductDetail = () => {
     if (error) return <div>Error: {error}</div>;
 
     return (
-        <div className="container mx-auto p-4">
+        <div className="container mx-auto p-4 my-32">
             {product && (
-                <div className="flex flex-col md:flex-row">
-                    <img src={product.image} alt={product.title} className="w-full md:w-1/2 h-auto object-cover" />
-                    <div className="md:ml-4">
-                        <h1 className="text-2xl font-bold">{product.title}</h1>
-                        <p className="text-gray-600">${product.price.toFixed(2)}</p>
-                        <p className="mt-4">{product.description}</p>
-                        <div className="flex gap-4 mt-4">
-                            <button onClick={handleAddToCart} className="bg-blue-500 text-white py-2 px-4 rounded">
+                <div className="flex flex-col md:flex-row border border-[#808080] rounded-2xl p-4">
+                    <div className="flex flex-col items-center justify-center w-full md:w-1/2 gap-2">
+                        <div className="bg-[#F2F2F2] border rounded-2xl p-2">
+                            <img src={product.image} alt={product.title} className="w-3/4 h-auto object-cover rounded-2xl" />
+                        </div>
+                    </div>
+                    <div className="md:ml-4 flex flex-col">
+                        <h1 className="text-4xl font-semibold">{product.title}</h1>
+                        <p className="text-lg font-medium">Brand: {product.brand}</p>
+                        <hr className="my-2"/>
+                        <p className=""><span className="font-medium text-2xl">${product.price.toFixed(2)}</span> <span className="line-through text-[#808080] text-base">$300</span> <span className="bg-[#006200] bg-opacity-10 text-[#006200] text-base rounded-md">-50%</span></p>
+                        <p className="text-[#006200] text-opacity-70 text-sm">50 units left</p>
+                        <p className="text-[#808080] text-sm">+ shipping fee may vary by location</p>
+                        <div id='quantity' className="flex flex-row items-center justify-between mt-4">
+                            <h1 className="text-base">Quantity:</h1>
+                            <div className="flex items-center border border-black rounded mt-4">
+                                <button className="bg-secondary p-2 text-2xl text-white" onClick={() => setQuantity(quantity > 1 ? quantity - 1 : 1)}><FaMinus /></button>
+                                <p className="text-2xl px-4">{quantity}</p>
+                                <button className="bg-secondary p-2 text-2xl text-white" onClick={() => setQuantity(quantity + 1)}><FaPlus /></button>
+                            </div>
+                        </div>
+                        <div className="flex flex-row items-center justify-between mt-4">
+                            <button className="bg-secondary text-white py-2 px-4 rounded" onClick={handleAddToCart}>
                                 Add to Cart
                             </button>
-                            <button onClick={handleAddToWishlist} className="bg-red-500 text-white py-2 px-4 rounded">
+                            <button className="bg-red-500 text-white py-2 px-4 rounded" onClick={handleAddToWishlist}>
                                 Add to Wishlist
                             </button>
                         </div>

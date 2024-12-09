@@ -7,9 +7,11 @@ import { FaRegStar } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import { RxPerson } from "react-icons/rx";
 import { useState } from "react";
-
+import { logout } from '../redux/authSlice';
+import { useDispatch } from "react-redux";
 
 function Navbar() {
+  const dispatch = useDispatch();
   const isLoggedIn = useSelector(state=>state.auth.isLoggeIn);
   const cartItems = useSelector(state => state.cart.items); 
   const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0); 
@@ -22,6 +24,9 @@ function Navbar() {
   const handleClick = () =>{
     setDropdown(false);
   }
+  const handleLogout = () => {
+    dispatch(logout());
+  };
   return (
     <div>
       <div className="flex items-center justify-evenly h-12 bg-black pl-10">
@@ -48,7 +53,7 @@ function Navbar() {
                 <NavLink to="/wishlist" className="active:font-bold text-2xl"><IoHeartOutline/></NavLink>
                 <p className="absolute top-0 right-0 text-white w-4 h-4 bg-secondary border rounded-full text-xs flex items-center justify-center">{totalWishlistItems}</p>
               </div>
-              <div className="relative h-10 w-10 flex items-center justify-evenly">
+              <div className="relative h-10 w-10 flex items-center justify-evenly rounded-full hover:bg-secondary hover:text-white">
                 <NavLink to="/cart" className="active:font-bold text-2xl"><IoCartOutline/></NavLink>
                 <p className="absolute top-0 right-0 text-white w-4 h-4 bg-secondary border rounded-full text-xs flex items-center justify-center">{totalQuantity}</p>
               </div>
@@ -56,9 +61,9 @@ function Navbar() {
                 <NavLink to="/account" className="active:font-bold text-2xl"><RxPerson/></NavLink>
                 <div className="absolute top-10 right-0 w-56 text-white bg-black bg-opacity-40 backdrop-blur border rounded-[4px] p-3 pl-10 flex flex-col gap-3 z-10 opacity-0 hover:opacity-100 transition-opacity duration-300">
                   <NavLink to="/account" className="text-sm flex items-center gap-2"><RxPerson className="text-lg"/> Manage My Account</NavLink>
-                  <NavLink to="/account" className="text-sm flex items-center gap-2"><FiShoppingBag className="text-lg"/>My Order</NavLink>
-                  <NavLink to="/account" className="text-sm flex items-center gap-2"><MdOutlineCancel className="text-lg"/>My Cancellations</NavLink>
-                  <NavLink to="/account" className="text-sm flex items-center gap-2"><FaRegStar className="text-lg"/>My Reviews</NavLink>
+                  <NavLink to="/not" className="text-sm flex items-center gap-2"><FiShoppingBag className="text-lg"/>My Order</NavLink>
+                  <NavLink to="/not" className="text-sm flex items-center gap-2"><MdOutlineCancel className="text-lg"/>My Cancellations</NavLink>
+                  <NavLink to="/not" className="text-sm flex items-center gap-2"><FaRegStar className="text-lg"/>My Reviews</NavLink>
                   <NavLink to="/login" className="text-sm flex items-center gap-2"><CiLogout className="text-lg"/>Logout</NavLink>
                 </div>
               </div>

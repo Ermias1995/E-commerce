@@ -16,9 +16,10 @@ Here are the login credentials for the application:
   Password: <strong>83r5^_</strong>
 </p>
 
+
 ## Overview
 
-The Exclusive E-commerce app is an e-commerce platform designed to provide a seamless shopping experience for users. Built with modern web technologies, this application features a user-friendly interface that allows customers to browse, search, and purchase a wide variety of products, including categories such as Men, Women, Kids, and Accessories.
+The Exclusive E-commerce app is a desktop-only e-commerce platform designed to provide a seamless shopping experience for users. Built with modern web technologies, this application focuses on learning API integration and state management. It features a user-friendly interface that allows customers to browse, search, and purchase a variety of products.
 
 ## Key Functionalities to Implement
 
@@ -70,8 +71,9 @@ To get a local copy up and running, follow these steps:
    ```bash
    git clone https://github.com/yourusername/exclusive-ecommerce.git
 2. ```bash
-   cd exclusive-ecommerce
+   cd Ecommerce
 3. ```bash
    npm install
 4. ```bash
    npm run dev
+5. And Don't forget to install <strong>axios</strong>,<strong>tailwind</strong>,<strong>Redux toolkit</strong>,<strong>React icons</strong> Libraries and Extensions

@@ -45,18 +45,16 @@ function Navbar() {
                 <NavLink to="/cart" className="active:font-bold text-2xl"><IoCartOutline/></NavLink>
                 <p className="absolute top-0 right-0 text-white w-4 h-4 bg-secondary border rounded-full text-xs flex items-center justify-center">2</p>
               </div>
-              <div className="flex items-center justify-evenly h-10 w-10 rounded-full hover:bg-secondary hover:text-white">
-                <NavLink onClick={()=>{setDropdown(!dropdown)}} className="active:font-bold text-2xl"><RxPerson/></NavLink>
-              </div>
-              {dropdown && (
-                <div className="absolute top-32 right-20 w-56 text-white bg-black bg-opacity-40 backdrop-blur border rounded-[4px] p-3 pl-10 flex flex-col gap-3 z-10">
-                  <NavLink to="/account" className="text-sm flex items-center  gap-2" onClick={()=>{setDropdown(false)}}><RxPerson className="text-lg"/> Manage My Account</NavLink>
-                  <NavLink to="/account" className="text-sm flex items-center  gap-2" onClick={()=>{setDropdown(false)}}><FiShoppingBag className="text-lg"/>My Order</NavLink>
-                  <NavLink to="/account" className="text-sm flex items-center  gap-2" onClick={()=>{setDropdown(false)}}><MdOutlineCancel className="text-lg"/>My Cancellations</NavLink>
-                  <NavLink to="/account" className="text-sm flex items-center  gap-2" onClick={()=>{setDropdown(false)}}><FaRegStar className="text-lg"/>My Reviews</NavLink>
-                  <NavLink to="/login" className="text-sm flex items-center  gap-2" onClick={()=>{setDropdown(false)}}><CiLogout className="text-lg"/>Logout</NavLink>
+              <div className="relative flex items-center justify-evenly h-10 w-10 rounded-full hover:bg-secondary hover:text-white">
+                <NavLink to="/account" className="active:font-bold text-2xl"><RxPerson/></NavLink>
+                <div className="absolute top-10 right-0 w-56 text-white bg-black bg-opacity-40 backdrop-blur border rounded-[4px] p-3 pl-10 flex flex-col gap-3 z-10 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                  <NavLink to="/account" className="text-sm flex items-center gap-2"><RxPerson className="text-lg"/> Manage My Account</NavLink>
+                  <NavLink to="/account" className="text-sm flex items-center gap-2"><FiShoppingBag className="text-lg"/>My Order</NavLink>
+                  <NavLink to="/account" className="text-sm flex items-center gap-2"><MdOutlineCancel className="text-lg"/>My Cancellations</NavLink>
+                  <NavLink to="/account" className="text-sm flex items-center gap-2"><FaRegStar className="text-lg"/>My Reviews</NavLink>
+                  <NavLink to="/login" className="text-sm flex items-center gap-2"><CiLogout className="text-lg"/>Logout</NavLink>
                 </div>
-              )}
+              </div>
             </div>
           )}
         </div>

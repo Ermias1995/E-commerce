@@ -148,6 +148,8 @@ function Home() {
           <div className="flex items-center justify-start gap-3">
             <div className="w-5 h-10 bg-[#00FF66] rounded"/>
             {/* <h1 className="text-[#00FF66] text-base font-semibold">{selectedCategory.charAt(0).toUpperCase() + selectedCategory.slice(1)}</h1> */}
+            <h1 className="text-[#00FF66] text-base font-semibold">{selectedCategory}</h1>
+
           </div>
           <div className="flex items-center justify-between">
             <h1 className="text-4xl font-semibold">Best Selling Products</h1>

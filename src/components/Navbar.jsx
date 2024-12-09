@@ -11,8 +11,12 @@ import { useState } from "react";
 
 function Navbar() {
   const isLoggedIn = useSelector(state=>state.auth.isLoggeIn);
-  const cartItems = useSelector(state => state.cart.items); // Get cart items from Redux
-  const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0); // Calculate total quantity
+  const cartItems = useSelector(state => state.cart.items); 
+  const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0); 
+
+  const wishlistItems = useSelector(state => state.wishlist.items);
+  const totalWishlistItems = wishlistItems.length;
+
   console.log(isLoggedIn);
   const [dropdown, setDropdown] = useState(false);
   const handleClick = () =>{
@@ -40,8 +44,9 @@ function Navbar() {
           <input type="text" placeholder='What are you looking for?' className="bg-[#F5F5F5] px-2 placeholder:text-xs focus:outline-none"/>
           {isLoggedIn && (
             <div className="flex items-center justify-evenly ml-14 gap-3">
-              <div className=" flex items-center justify-evenly h-10 w-10  rounded-full hover:bg-secondary hover:text-white">
+              <div className="relative flex items-center justify-evenly h-10 w-10  rounded-full hover:bg-secondary hover:text-white">
                 <NavLink to="/wishlist" className="active:font-bold text-2xl"><IoHeartOutline/></NavLink>
+                <p className="absolute top-0 right-0 text-white w-4 h-4 bg-secondary border rounded-full text-xs flex items-center justify-center">{totalWishlistItems}</p>
               </div>
               <div className="relative h-10 w-10 flex items-center justify-evenly">
                 <NavLink to="/cart" className="active:font-bold text-2xl"><IoCartOutline/></NavLink>

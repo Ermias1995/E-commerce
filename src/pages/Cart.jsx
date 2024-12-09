@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { removeFromCart, clearCart } from '../redux/cartSlice'; 
+import { NavLink } from 'react-router-dom';
 
 const Cart = () => {
     const dispatch = useDispatch();
@@ -49,10 +50,19 @@ const Cart = () => {
         ) : (
         <div>
           <div className="flex flex-col gap-4 mb-4">
+          <div className="flex items-center justify-evenly">
+            <p>Products</p>
+            <p>Price</p>
+            <p>Quantity</p>
+            <p>Subtotal</p>
+          </div>
           {productDetails.map(item => (
             <div key={item.id} className="flex items-center justify-between border-b pb-4">
-              <div className="flex items-center shadow-sm py-2 px-4">
+              <div className="flex items-center justify-between shadow-sm py-2 px-4">
                 <img src={item.image} alt={item.title} className="w-20 h-20 object-cover mr-4" />
+                {/* <p>{item.price}</p>
+                <p>{item.quantity}</p>
+                <p>{(item.price * item.quantity).toFixed(2)}</p> */}
                 <div>
                   <h2 className="text-lg font-semibold">{item.title}</h2>
                   <p className="text-gray-600">
@@ -73,6 +83,26 @@ const Cart = () => {
             <div className="text-lg font-bold">
               Total: ${totalPrice.toFixed(2)}
             </div>
+          </div>
+          <div className="flex flex-col mt-10 justify-end gap-2 border-2 border-[#808080] rounded p-5">
+            <h1 className='font-semibold text-xl'>Cart Total</h1>
+            <div className="flex justify-between">
+              <p>Subtotal:</p>
+              <p>${totalPrice.toFixed(2)}</p>
+            </div>
+            <hr/>
+            <div className="flex justify-between">
+              <p>Shipping:</p>
+              <p>Free</p>
+            </div>
+            <hr/>
+            <div className="flex justify-between">
+              <p>Total:</p>
+              <p>${totalPrice.toFixed(2)}</p>
+            </div>
+            <NavLink to='checkout' onClick={handleClearCart} className="bg-red-500 w-60 text-white py-2 px-4 rounded">
+              Procced to Checkout
+            </NavLink>
           </div>
         </div>
           )}

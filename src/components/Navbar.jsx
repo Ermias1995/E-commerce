@@ -11,6 +11,8 @@ import { useState } from "react";
 
 function Navbar() {
   const isLoggedIn = useSelector(state=>state.auth.isLoggeIn);
+  const cartItems = useSelector(state => state.cart.items); // Get cart items from Redux
+  const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0); // Calculate total quantity
   console.log(isLoggedIn);
   const [dropdown, setDropdown] = useState(false);
   const handleClick = () =>{
@@ -43,7 +45,7 @@ function Navbar() {
               </div>
               <div className="relative h-10 w-10 flex items-center justify-evenly">
                 <NavLink to="/cart" className="active:font-bold text-2xl"><IoCartOutline/></NavLink>
-                <p className="absolute top-0 right-0 text-white w-4 h-4 bg-secondary border rounded-full text-xs flex items-center justify-center">2</p>
+                <p className="absolute top-0 right-0 text-white w-4 h-4 bg-secondary border rounded-full text-xs flex items-center justify-center">{totalQuantity}</p>
               </div>
               <div className="relative flex items-center justify-evenly h-10 w-10 rounded-full hover:bg-secondary hover:text-white">
                 <NavLink to="/account" className="active:font-bold text-2xl"><RxPerson/></NavLink>

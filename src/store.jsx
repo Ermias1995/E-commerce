@@ -3,6 +3,7 @@ import authSlice from "./redux/authSlice";
 import productSlice from "./redux/productSlice";
 import categoriesSlice from "./redux/categorySlice";
 import productCategorySlice from './redux/productCategorySlice';
+import cartSlice from "./redux/cartSlice";
 
 const store = configureStore({
     reducer:{
@@ -10,6 +11,7 @@ const store = configureStore({
         products: productSlice.reducer,
         categories: categoriesSlice.reducer,
         category: productCategorySlice.reducer,
+        cart: cartSlice.reducer,
     }
 });
 

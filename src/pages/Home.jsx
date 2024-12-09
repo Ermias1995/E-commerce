@@ -12,6 +12,8 @@ import { fetchProducts } from "../redux/productSlice";
 import ProductList from "../components/ProductList";
 import CategoryList from "../components/CategoryList";
 import Services from "../components/Services";
+import FilteredProducts from "../components/FilteredProducts";
+
 
 function Home() {
 
@@ -43,14 +45,16 @@ function Home() {
     }, []);
 
     // const dispatch = useDispatch();
-    // const { items, limitedItems,loading, error } = useSelector((state) => state.products);
-    
+    // const { loading, error } = useSelector((state) => state.products);
+
     // useEffect(() => {
     //     dispatch(fetchProducts());
     // }, [dispatch]);
 
     // if (loading) return <div>Loading...</div>;
     // if (error) return <div>Error: {error}</div>;
+
+    const categories = ["electronics", "jewelery", "men's clothing", "women's clothing"];
 
   return (
     <div>
@@ -133,7 +137,7 @@ function Home() {
               <button className="bg-gray-300 w-10 h-10 p-2 rounded-full">{">"}</button>
             </div>
           </div>
-          <CategoryList/>
+          <CategoryList categories={categories} />
           <hr className="my-10"/>
         </div>
 
@@ -148,8 +152,9 @@ function Home() {
             <button className="text-textColor bg-secondary p-2 px-4 rounded">View All</button>
           </div>
           {/* <CategoryList/> */}
-          <ProductList category="jewelery"/>
-
+          <FilteredProducts />
+          
+          
           {/* Second banner */}
           <div className="relative flex justify-center items-center gap-4 pl-16 py-12 mt-10 bg-black">
             <div className="flex flex-col justify-center gap-5">

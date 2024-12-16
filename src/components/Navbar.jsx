@@ -9,6 +9,7 @@ import { RxPerson } from "react-icons/rx";
 import { useState } from "react";
 import { logout } from '../redux/authSlice';
 import { useDispatch } from "react-redux";
+import { useEffect } from "react";
 
 function Navbar() {
   const dispatch = useDispatch();
@@ -28,7 +29,8 @@ function Navbar() {
     dispatch(logout());
   };
   return (
-    <div>
+    <div className="">
+    <div className="fixed top-0 left-0 w-full z-50 bg-white">
       <div className="flex items-center justify-evenly h-12 bg-black pl-10">
         <p className="text-sm text-[#FAFAFA]">Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!<a href="#" className="font-semibold underline ml-2">ShopNow</a></p>
         <select className="bg-black text-[#FAFAFA] ml-10">
@@ -72,6 +74,8 @@ function Navbar() {
         </div>
       </div>
       <hr/>
+    </div>
+    <div className="h-[132px]"></div>
     </div>
   )
 }

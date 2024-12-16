@@ -45,8 +45,8 @@ function Login() {
             {error&& <p className="text-red-500">{error}</p>}
           </div>
           <form onSubmit={handleSubmit} className="flex flex-col justify-start gap-10">
-            <input type="text" placeholder="Enter Email or Phone Number" onChange={(e)=>setUsername(e.target.value)} className="border-[#808080] border-b-[1px] focus:outline-none"/>
-            <input type="text" placeholder="Password" onChange={(e)=>setPassword(e.target.value)} className="border-[#808080] border-b-[1px] focus:outline-none"/>
+            <input type="text" placeholder="Username: mor_2314" onChange={(e)=>setUsername(e.target.value)} className="border-[#808080] border-b-[1px] focus:outline-none"/>
+            <input type="text" placeholder="Password: 83r5^_" onChange={(e)=>setPassword(e.target.value)} className="border-[#808080] border-b-[1px] focus:outline-none"/>
             <div className="flex justify-between items-center">
               <button className="text-white w-36 py-3 bg-[#EA4335] text-base rounded-[4px]" type="submit">Login</button>
               <a className="pl-16 flex gap-2 text-[#EA4335]">Forget Password?</a>

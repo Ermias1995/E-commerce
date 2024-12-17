@@ -1,6 +1,6 @@
 # Exclusive E-commerce App
 
-<a href="https://exclusiveecomerce.netlify.app/" target="_blank" style="font-size: 20px; text-decoration: none;">
+<a href="https://exclusivecommerce1.netlify.app/" target="_blank" style="font-size: 20px; text-decoration: none;">
   <img src="https://img.shields.io/badge/Live%20Demo-Check%20it%20out-brightgreen" alt="Live Demo" style="height: 40px;">
 </a>
 <a href="https://www.figma.com/design/0LOaFhSqUk5TrI6y8VSuFB/E-commerce-desktop-only-desig-(Copy)?node-id=1-3&t=FqVgJahttcEolkIM-0" target="_blank" style="font-size: 20px; text-decoration: none;">
